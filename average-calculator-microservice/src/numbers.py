@@ -1,10 +1,10 @@
 from flask import Blueprint, jsonify
-from services.number_fetcher import NumberFetcher
-from services.calculator import Calculator
+from number_fetcher import NumberFetcher
+from calculator import Calculator
 from flask import current_app
 import time
 
-numbers_bp = Blueprint('numbers', __name__)
+numbers_bp = Blueprintgi('numbers', __name__)
 
 # Initialize services
 number_fetcher = NumberFetcher()
