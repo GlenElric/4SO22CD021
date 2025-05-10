@@ -6,7 +6,7 @@ class Calculator:
 #Upon breaching the window size, replace the oldest number with the newest one.
     def add_number(self, number):
         if len(self.numbers)>=self.max_window_size:
-            self.numbers.pop(0) 
+            self.numbers.pop(0) #used  FIFO to remove the oldest number
         self.numbers.append(number)
 
 #Calculating the average of the numbers in the list.

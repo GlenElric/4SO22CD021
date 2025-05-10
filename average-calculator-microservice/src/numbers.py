@@ -1,16 +1,17 @@
 from flask import Blueprint, jsonify
+from flask import request
 from number_fetcher import NumberFetcher
 from calculator import Calculator
 from flask import current_app
 import time
 
-numbers_bp = Blueprintgi('numbers', __name__)
+numbers_blueprint = Blueprint('numbers', __name__)
 
 # Initialize services
 number_fetcher = NumberFetcher()
 calculator = Calculator(max_window_size=current_app.config['MAX_WINDOW_SIZE'])
 
-@numbers_bp.route('/numbers/<string:numberid>', methods=['GET'])
+@numbers_blueprint.route('/numbers/<string:numberid>', methods=['GET'])
 def get_numbers(numberid):
     start_time = time.time()
     
